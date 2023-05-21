@@ -1,0 +1,14 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+data = pd.read_csv("C:/Users/Mithun Adhe/Desktop/Clg Tasks/DSABDA/Titanic.csv")
+
+data.head()
+
+data.info()
+
+sns.boxplot(x='Sex', y='Age', data=data)
+
+sns.boxplot(x='Sex', y='Age', data=data, hue='Survived')
