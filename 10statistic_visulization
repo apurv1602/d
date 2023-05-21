@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
+df = pd.read_csv("C:/Users/Mithun Adhe/Desktop/Clg Tasks/DSABDA/Iris.csv")
+
+df.head()
+
+df.info()
+
+fig, axes = plt.subplots(2, 2, figsize=(16, 8))
+axes[0,0].set_title("Distribution of Sepal Length")
+axes[0,0].hist(df["SepalLengthCm"]);
+axes[0,1].set_title("Distribution of Sepal Width")
+axes[0,1].hist(df["SepalWidthCm"]);
+axes[1,0].set_title("Distribution of Petal Length")
+axes[1,0].hist(df["PetalLengthCm"]);
+axes[1,1].set_title("Distribution of Petal Width")
+axes[1,1].hist(df["PetalWidthCm"]);
+
+fig, axes = plt.subplots(2, 2, figsize=(16,9))
+axes[0,0].set_title("Distribution of Sepal Length")
+sns.boxplot( y="SepalLengthCm", x= "Species", data=df, orient='v' , ax=axes[0, 0])
+axes[0,1].set_title("Distribution of Sepal Length")
+sns.boxplot( y="SepalWidthCm", x= "Species", data=df, orient='v' , ax=axes[0, 1])
+axes[1,0].set_title("Distribution of Sepal Length")
+sns.boxplot( y="PetalLengthCm", x= "Species", data=df, orient='v' , ax=axes[1, 0])
+axes[1,1].set_title("Distribution of Sepal Length")
+sns.boxplot( y="PetalWidthCm", x= "Species", data=df, orient='v' , ax=axes[1, 1])
+plt.show()
