@@ -17,7 +17,7 @@ df.isnull().sum()
 df.shape
 x = df.iloc[:,2:4]
 y = df.iloc[:,4]
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state =0)
 
 scale = StandardScaler()
 x_train = scale.fit_transform(x_train)
