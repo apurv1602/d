@@ -1,0 +1,47 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+data = pd.read_csv("C:/Users/Mithun Adhe/Desktop/Clg Tasks/DSABDA/Titanic.csv")
+data.head()
+sns.distplot(x=data['Age'], bins = 10)
+sns.distplot(data['Age'], bins = 10, kde=False)
+
+# For Plot 1
+sns.jointplot(x=data['Age'], y=data['Fare'], kind='scatter')
+# For plot 2
+sns.jointplot(x=data['Age'], y=data['Fare'], kind='hex')
+
+sns.rugplot(data['Fare'])
+
+sns.barplot(x='Sex', y='Age', data=data)
+
+sns.barplot(x='Sex', y='Age', data=data, estimator=np.std)
+
+sns.countplot(x='Sex', data=data)
+
+sns.barplot(x='Sex', y='Age', data=data)
+
+sns.boxplot(x='Sex', y='Age', data=data)
+
+sns.violinplot(x='Sex', y='Age', data=data)
+
+sns.violinplot(x='Sex', y='Age', data=data, hue='Survived')
+
+sns.stripplot(x='Sex', y='Age', data=data, jitter=False)
+
+sns.stripplot(x='Sex', y='Age', data=data, jitter=True)
+
+sns.stripplot(x='Sex', y='Age', data=data, jitter=False, hue='Survived')
+
+sns.swarmplot(x='Sex', y='Age', data=data)
+
+data.corr()
+
+corr = data.corr()
+sns.heatmap(corr)
+
+corr = data.corr()
+sns.heatmap(corr, annot=True)
+
+sns.histplot(data['Fare'], kde=False, bins=10)
